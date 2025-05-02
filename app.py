@@ -47,3 +47,5 @@ def generate_content(topic):
     st.title("SparkShort: Video Idea Generator")
     st.write("Easily create ideas, scripts, and hashtags for your TikTok/Reels videos.")
     st.write("Hello see you agaun")
+    st.write("Easily create ideas, scripts, and hashtags for your TikTok/Reels videos.")
+    topic = st.text_input("Entẻ a topic (e.g., 'self-development','travel'):")
