@@ -54,7 +54,13 @@ if st.button("Generate Content"):
             st.subheader("Video Ideas")
             for idea in ideas:
                 st.write(f"- {idea}")
-
+            st.subheader("Video bias")
+            for idea in ideas:
+                st.write(f"-{idea}")
+            st.subheader("Video bias")
+            for idea in ideas:
+                st.write(f"-{idea}")
+            
             st.subheader("Video Scripts")
             for script in scripts:
                 st.write(f"- {script}")
