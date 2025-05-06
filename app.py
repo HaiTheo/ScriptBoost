@@ -68,8 +68,12 @@ if st.button("Generate Content"):
             st.subheader("Trending Hashtags")
             for hashtag in hashtags:
                 st.write(f"- {hashtag}")
+            st.subheader("Good morning")
+            for hashtag in hashtags:
+                st.write(f"-{hashtag}")
         else:
             st.warning("Please enter a topic!")
 st.write("Write is this - I don't understand about this")
 topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
 st.subheader("What the heal")
+st.write("1 short - from low to high - that's is good at");
