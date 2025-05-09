@@ -73,9 +73,13 @@ if st.button("Generate Content"):
                 st.write(f"-{hashtag}")
         else:
             st.warning("Please enter a topic!")
-st.write("Write is this - I don't understand about this")
-topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
-st.subheader("What the heal")
-st.write("1 short - from low to high - that's is good at");
-st.write("1 what is this, what is that, why are you tell me about it, what hhappeining")
-st.write("What is this and I don't understand about it.")
+# st.write("Write is this - I don't understand about this")
+# topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
+# st.subheader("What the heal")
+# st.write("1 short - from low to high - that's is good at")
+# st.write("1 what is this, what is that, why are you tell me about it, what hhappeining")
+# st.write("What is this and I don't understand about it.")
+# st.write("YEs let's do it again")
+# st.wrt
+st.write("Yes it's good to you", "Thank you")
+st.write("What is this, and How I can tell you about it")
