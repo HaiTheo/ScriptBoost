@@ -54,23 +54,12 @@ if st.button("Generate Content"):
             st.subheader("Video Ideas")
             for idea in ideas:
                 st.write(f"- {idea}")
-            st.subheader("Video bias")
-            for idea in ideas:
-                st.write(f"-{idea}")
-            st.subheader("Video bias")
-            for idea in ideas:
-                st.write(f"-{idea}")
-            
             st.subheader("Video Scripts")
             for script in scripts:
                 st.write(f"- {script}")
-
             st.subheader("Trending Hashtags")
             for hashtag in hashtags:
                 st.write(f"- {hashtag}")
-            st.subheader("Good morning")
-            for hashtag in hashtags:
-                st.write(f"-{hashtag}")
         else:
             st.warning("Please enter a topic!")
 # st.write("Write is this - I don't understand about this")
