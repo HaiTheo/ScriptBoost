@@ -1,39 +1,36 @@
 import openai
 import streamlit as st
+
+#Title
 st.title("🎬 ScriptBoost - Short Video Script Generator")
-
-openai.api_key = "your-openai-api-key"  # Replace with your OpenAI API key
-st.title("Video Script Generator")
-
-
+#Enter API key
+openai.api_key = "your-openai-api-key" #Replace with real API
+# Mô tả ngắn gọn cho app
 st.write("""
     This app generates video ideas, scripts, and trending hashtags based on a given topic.
     Just type in a topic like "self-development", "travel", or "fitness" to get started!
 """)
-
-topic = st.text_input("Enter your topic")
-
+# Nhập chủ đề
+topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
+# Hàm lấy nội dung từ OpenAI
 def generate_content(topic):
-    #Request OpenAi to generate ideas
     prompt_ideas = f"Generate 5 video ideas for the topic '{topic}' in a short, engaging style."
-    ideas_response = openai.Completion.create(
-        engine="text-davinci-003",  # Or GPT-4 if you have access
-        prompt=prompt_ideas,
-        max_tokens=150,
-        n=1,
-        stop=None,
-        temperature=0.7
+    ideas_response = openai.completions.create(
+         engine="text-davinci-003",
+         prompt=prompt_ideas,
+         max_tokens=150,
+         temperature=0.7
     )
     ideas = ideas_response.choices[0].text.strip().split("\n")
     prompt_scripts = f"Write 5 short video scripts (20-40 seconds) based on the topic '{topic}'."
     scripts_response = openai.Completion.create(
-        engine="text-davinci-003", # Or GPT-4   
+        engine="text-davinci-003",
         prompt=prompt_scripts,
         max_tokens=300,
         temperature=0.7
     )
     scripts = scripts_response.choices[0].text.strip().split("\n")
-    
+
     prompt_hashtags = f"Generate 5 trending hashtags for the topic '{topic}'."
     hashtags_response = openai.Completion.create(
         engine="text-davinci-003",
@@ -44,32 +41,33 @@ def generate_content(topic):
     hashtags = hashtags_response.choices[0].text.strip().split("\n")
 
     return ideas, scripts, hashtags
-st.title("SparkShort: Video Idea Generator")
-st.write("Easily create ideas, scripts, and hashtags for your TikTok/Reels videos.")
-topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
+# Nút tạo nội dung
 if st.button("Generate Content"):
-        if topic:
-            ideas, scripts, hashtags = generate_content(topic)
+    if topic:
+        ideas, scripts, hashtags = generate_content(topic)
 
-            st.subheader("Video Ideas")
-            for idea in ideas:
-                st.write(f"- {idea}")
-            st.subheader("Video Scripts")
-            for script in scripts:
-                st.write(f"- {script}")
-            st.subheader("Trending Hashtags")
-            for hashtag in hashtags:
-                st.write(f"- {hashtag}")
-        else:
-            st.warning("Please enter a topic!")
-# st.write("Write is this - I don't understand about this")
-# topic = st.text_input("Enter a topic (e.g., 'self-development', 'travel'):")
-# st.subheader("What the heal")
-# st.write("1 short - from low to high - that's is good at")
-# st.write("1 what is this, what is that, why are you tell me about it, what hhappeining")
-# st.write("What is this and I don't understand about it.")
-# st.write("YEs let's do it again")
-# st.wrt
-st.write("Yes it's good to you", "Thank you")
-st.write("What is this, and How I can tell you about it")
-st.write("Qing yi de wen jian ping fa song key wo")
+        st.subheader("💡 Video Ideas")
+        for idea in ideas:
+            st.write(f"- {idea}")
+
+        st.subheader("🎬 Video Scripts")
+        for script in scripts:
+            st.write(f"- {script}")
+
+        st.subheader("🔥 Trending Hashtags")
+        for hashtag in hashtags:
+            st.write(f"- {hashtag}")
+    else:
+        st.warning("⚠️ Please enter a topic!")
+
+#         💡 Video Ideas
+# - 1. 5-Minute Full Body Workout
+# - 2. How to Stay Motivated at the Gym
+
+# 🎬 Video Scripts
+# - Script 1: Start your day with this 5-minute full body blast...
+# - Script 2: Ever feel lazy to go to the gym? Try this trick...
+
+# 🔥 Trending Hashtags
+- #FitnessMotivation
+- #QuickWorkout
